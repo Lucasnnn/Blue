@@ -73,24 +73,28 @@ Bem vindo ao ${i}º dia de teste , pretende usar o veiculo hoje ?`)
   
 dados.rodar()
 
-const dodia = rodadosdia(cargadodia , kmdodia , autonomia[0] , autonomia[1] )
+const dodia = Math.floor(rodadosdia(cargadodia , kmdodia , autonomia[0] , autonomia[1] ))
  autonomia.splice(0,1,dodia)
   console.clear()
   
 console.log(`${dados.user} hoje você rodou ${kmdodia} kilometros,e fez ${cargadodia} recargas , ficando sobrando ${dodia} kilometros de autonomia ,recomendo que coloque o carro pra recarregar para que amanhã possua autonomia completa.`)
+console.log()
+let novodia = prompt('Para encerrar esse dia press enter...')
 
 }
 
+
+
 if(dados.rapido > dados.lento){
-  console.log(`Chegamos ao fim do nosso tempo de teste , nesses 7 dias você rodou um total de ${dados.kilometragem} , fez um total de ${dado.rapido} recargas rapidas e ${dados.lento} recargas lentas , sendo assim a vida util da sua bateria daqui a 5 anos vai ter perdido 30 % da sua eficacia de reserva energetica`)
+  console.log(`Chegamos ao fim do nosso tempo de teste , nesses 7 dias você rodou um total de ${dados.kilometragem} , fez um total de ${dados.rapido} recargas rapidas e ${dados.lento} recargas lentas , sendo assim a vida util da sua bateria daqui a 5 anos vai ter perdido 30 % da sua eficacia de reserva energetica`)
 }
 
 if(dados.lento > dados.rapido ){
-  console.log(`Chegamos ao fim do nosso tempo de teste , nesses 7 dias você rodou um total de ${dados.kilometragem} , fez um total de ${dado.rapido} recargas rapidas e ${dados.lento} recargas lentas , sendo assim a vida util da sua bateria tera uma grande longevidade`)
+  console.log(`Chegamos ao fim do nosso tempo de teste , nesses 7 dias você rodou um total de ${dados.kilometragem} , fez um total de ${dados.rapido} recargas rapidas e ${dados.lento} recargas lentas , sendo assim a vida util da sua bateria tera uma grande longevidade`)
 }
 
 if(dados.rapido > dados.lento*2){
-  console.log(`Chegamos ao fim do nosso tempo de teste , nesses 7 dias você rodou um total de ${dados.kilometragem} , fez um total de ${dado.rapido} recargas rapidas e ${dados.lento} recargas lentas , sendo assim a vida util da sua bateria daqui a 5 anos vai ter perdido 30 % da sua eficacia de reserva energetica`)
+  console.log(`Chegamos ao fim do nosso tempo de teste , nesses 7 dias você rodou um total de ${dados.kilometragem} , fez um total de ${dados.rapido} recargas rapidas e ${dados.lento} recargas lentas , sendo assim a vida util da sua bateria daqui a 5 anos vai ter perdido 30 % da sua eficacia de reserva energetica`)
 }
 //________ funcoes _________\\
 
