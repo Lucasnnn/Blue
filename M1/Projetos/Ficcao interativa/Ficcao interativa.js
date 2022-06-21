@@ -84,18 +84,15 @@ let novodia = prompt('Para encerrar esse dia press enter...')
 }
 
 
-
+console.clear()
 if(dados.rapido > dados.lento){
-  console.log(`Chegamos ao fim do nosso tempo de teste , nesses 7 dias você rodou um total de ${dados.kilometragem} , fez um total de ${dados.rapido} recargas rapidas e ${dados.lento} recargas lentas , sendo assim a vida util da sua bateria daqui a 5 anos vai ter perdido 30 % da sua eficacia de reserva energetica`)
+  console.log(`Chegamos ao fim do nosso tempo de teste , nesses 7 dias você rodou um total de ${dados.kilometragem} kilometros , fez um total de ${dados.rapido} recargas rapidas e ${dados.lento} recargas lentas , sendo assim a vida util da sua bateria daqui a 5 anos vai ter perdido 30 % da sua eficacia de reserva energetica`)
 }
 
 if(dados.lento > dados.rapido ){
-  console.log(`Chegamos ao fim do nosso tempo de teste , nesses 7 dias você rodou um total de ${dados.kilometragem} , fez um total de ${dados.rapido} recargas rapidas e ${dados.lento} recargas lentas , sendo assim a vida util da sua bateria tera uma grande longevidade`)
+  console.log(`Chegamos ao fim do nosso tempo de teste , nesses 7 dias você rodou um total de ${dados.kilometragem} kilmoetros, fez um total de ${dados.rapido} recargas rapidas e ${dados.lento} recargas lentas , sendo assim a vida util da sua bateria tera uma grande longevidade`)
 }
 
-if(dados.rapido > dados.lento*2){
-  console.log(`Chegamos ao fim do nosso tempo de teste , nesses 7 dias você rodou um total de ${dados.kilometragem} , fez um total de ${dados.rapido} recargas rapidas e ${dados.lento} recargas lentas , sendo assim a vida util da sua bateria daqui a 5 anos vai ter perdido 30 % da sua eficacia de reserva energetica`)
-}
 //________ funcoes _________\\
 
 function simOUnao(texto){
