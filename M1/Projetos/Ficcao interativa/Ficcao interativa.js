@@ -64,7 +64,7 @@ console.clear()
 
 for(let i = 1;i<=7;i++){
   console.clear()
-
+ autonomia.splice(0,1,614)
  let usar = simOUnao(`Ola ${dados.user},
 Bem vindo ao ${i}º dia de teste , pretende usar o veiculo hoje ?`)
   if(usar == 1){console.clear();
