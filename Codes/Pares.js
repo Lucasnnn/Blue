@@ -16,7 +16,6 @@ i++
     
 }
 console.clear();
-
 console.log("Pares : " + par);
 console.log()
 console.log('Impares :' +  impar);
