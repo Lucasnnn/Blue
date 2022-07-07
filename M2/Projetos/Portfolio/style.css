@@ -1,3 +1,21 @@
 * {
-  font-family: "The Girl Next Door", cursive;
+  font-family: "Yellowtail", cursive;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(./imagens/fundo.jpeg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: cover;
+}
+
+footer {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(6, 134, 141, 0.403);
 }
