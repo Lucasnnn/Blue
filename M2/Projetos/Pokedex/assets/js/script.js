@@ -49,3 +49,4 @@ async function pesquisa(){
   var numero = document.querySelector("#busca").value ;
   pokemons(numero);
 }
+
