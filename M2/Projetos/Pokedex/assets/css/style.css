@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background: url(../img/fundo.jpg);
+  background-position: top center;
 }
 
 @font-face {
@@ -21,7 +22,13 @@ header {
   display: flex;
 }
 
-/* CARD STYLING */
+#busca{
+  width: 30vw;
+  height: 2vw;
+  margin-inline: 35vw;
+  font-size: 2vw;
+
+}
 
 .container,
 .card,
@@ -35,10 +42,11 @@ header {
 .card_front,
 .card_back {
   border-radius: 2vw;
-  background-color: aliceblue;
-  box-shadow: 0px 5px 25px 0px #ff0000;
+  background-color: #ffffffd1;
+  box-shadow: 0px 5px 25px 0px rgb(130, 0, 0);
   height: 28vw;
 }
+
 
 .card-symbol {
   font-size: 2vw;
@@ -46,7 +54,6 @@ header {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 50%;
   text-align: center;
   font-family: "Cantata One", serif;
 }
@@ -71,13 +78,18 @@ header {
 
 .card_front .card-symbol {
   font-size: 2vw;
+  text-transform: uppercase;
   font-family: "Cantata One", serif;
   color: rgb(0, 0, 0);
 }
 
 .card-text {
-  height: 50%;
+  height: auto;
   line-height: 1.4;
+}
+
+.card-text p {
+  text-align: center;
 }
 
 /* FLIP CARD STYLING */
@@ -113,7 +125,26 @@ header {
   transform: rotateY(-180deg);
 }
 
-footer {
-  text-align: center;
-  background-color: hsla(208, 65%, 55%, 0.141);
+#tipo{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#tipo p{
+  margin: 1.5vw;
+  width: 40%;
+  background-color: #ff0000ad;
+  border-radius: 0.5vw;
+}
+
+#numero{
+  margin: 0;
+  font-size: 2.5vw;
+  background-color: whitesmoke;
+}
+
+#descricao{
+  font-size: 2vw;
 }

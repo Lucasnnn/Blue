@@ -10,6 +10,7 @@
 
   <body>
     <header>POKEDEX</header>
+    <input onkeyup="pesquisa()" type="number" id="busca" autocomplete="off" spellcheck="false" dir="auto" placeholder="Busca por N°" >  
     <div id="pokemons">
       <div class="container" ontouchstart="this.classList.toggle('hover');">
         <div class="card">
@@ -19,16 +20,15 @@
           </div>
 
           <div class="card_back">
-            <h1 id="tipo" class="card-symbol">oi</h1>
+            <h1 id="tipo" class="card-symbol"></h1>
             <div class="card-text">
-              <p id="numero">num</p>
-              <p id="descricao">ola</p>
+              <p id="numero"></p>
+              <p id="descricao"></p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <footer>\\O/</footer>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
