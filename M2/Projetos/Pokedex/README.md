@@ -3,6 +3,7 @@
 Critérios de Avaliação
 Valor da entrega: 10 pontos
 A avaliação será feita por entregáveis obrigatórios, cada um valerá uma quantidade de pontos, todos começarão com 0 pontos, a cada item entregue, você receberá a quantia pertinente aquela entrega. O último ponto será dado a partir de um desafio, para que seu projeto seja destaque, ou não.
+
 Criação do repositório exclusivo no GitHub. (1,0)
 Utilização de HTML, CSS e JS puros, sem utilização de framework. (2,0)
 Utilização de Fetch, consumindo a PokeAPI (1,0)
