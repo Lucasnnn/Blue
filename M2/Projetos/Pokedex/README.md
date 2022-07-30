@@ -22,3 +22,5 @@ Projeto com Layout diferente do exemplo apresentado. (1,0)
 Deploy do projeto no GitHub Pages. (1,0)
 
 Responsividade com Media Queries aplicada (1,0)
+
+deploy : https://lucasnnn.github.io/Pokedex/
