@@ -1,26 +1,19 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-      <div
-        class="card text-white card-has-bg"
-        style="
+<div
+  class="card text-white card-has-bg"
+  style="
           background-size: cover;
             background-image: url({{ linkFoto }});
           "
+>
+  <div class="card-img-overlay d-flex flex-column">
+    <div class="card-body">
+      <small class="card-meta mb-2">{{ tipo }}</small>
+      <h4 class="card-title mt-0">
+        <span class="text-white">{{ nome }}</span>
+      </h4>
+      <small
+        ><i class="far fa-clock"></i> {{ potencia + "CV" }}, {{ ano }}</small
       >
-        <div class="card-img-overlay d-flex flex-column">
-          <div class="card-body">
-            <small class="card-meta mb-2">{{ tipo }}</small>
-            <h4 class="card-title mt-0">
-              <span class="text-white">{{ nome }}</span>
-            </h4>
-            <small
-              ><i class="far fa-clock"></i> {{ potencia + "CV" }},
-              {{ ano }}</small
-            >
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>

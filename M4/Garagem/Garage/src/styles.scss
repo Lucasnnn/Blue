@@ -2,6 +2,7 @@
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
 }
 body {
   margin: 0;
@@ -9,3 +10,7 @@ body {
   line-height: normal !important;
   background-color: #6a6c6e;
 }
+
+@import "swiper/scss";
+@import "swiper/scss/navigation";
+@import "swiper/scss/pagination";
