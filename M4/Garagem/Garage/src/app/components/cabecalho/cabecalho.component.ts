@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { NavigationEnd, Router } from '@angular/router';
-import { AppService } from 'src/app/app.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -11,27 +9,14 @@ import Swal from 'sweetalert2';
 })
 export class CabecalhoComponent implements OnInit {
   modo: boolean;
-  form: FormGroup;
 
-  constructor(
-    private route: Router,
-    private fb: FormBuilder,
-    private service: AppService
-  ) {}
+  constructor(private route: Router) {}
 
   ngOnInit(): void {
     this.route.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.attBotao();
       }
-    });
-
-    this.form = this.fb.group({
-      linkFoto: [],
-      nome: [],
-      tipo: [],
-      ano: [],
-      potencia: [],
     });
   }
 
@@ -61,10 +46,5 @@ export class CabecalhoComponent implements OnInit {
 
   attBotao() {
     this.modo = window.document.URL.includes('listagem');
-  }
-
-  adicionar() {
-    this.service.criar(this.form.value);
-    this.form.reset();
   }
 }

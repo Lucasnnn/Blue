@@ -1,15 +1,18 @@
-import { Component } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  constructor(private modalService: NgbModal) {}
+export class AppComponent implements OnInit {
+  constructor(private route: Router) {}
 
-  public open(modal: any): void {
-    this.modalService.open(modal);
+  ngOnInit(): void {
+    const x = window.localStorage.getItem('taokeyn?');
+    if (x) {
+      this.route.navigate(['/listagem'])
+    }
   }
 }

@@ -52,72 +52,10 @@
       </div>
       <div class="modal-body">
         <div *ngIf="modo" class="w-25" style="min-width: 300px">
-          <form
-            [formGroup]="form"
-            class="card p-2 shadow-lg"
-            style="background-color: hsla(0, 0%, 100%, 0.632)"
-          >
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label fw-bold"
-                >Nome
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                formControlName="nome"
-                placeholder="Nome do Veiculo"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label fw-bold"
-                >Tipo
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                formControlName="tipo"
-                placeholder="Tipo do Veiculo"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label fw-bold"
-                >Potencia
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                formControlName="potencia"
-                placeholder="Potencia do Veiculo"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label fw-bold"
-                >Ano
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                formControlName="ano"
-                placeholder="Ano do Veiculo"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label fw-bold"
-                >Link
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                formControlName="linkFoto"
-                placeholder="Link da Foto do Veiculo"
-              />
-            </div>
-            <div class="d-flex justify-content-center mb-2">
-              <button class="btn btn-sm btn-success" (click)="salvarEdit()">
-                Salvar
-              </button>
-            </div>
-          </form>
+          <app-form-veiculo
+            [dadoEdicao]="seleciona"
+            (editado)="editado($event)"
+          ></app-form-veiculo>
         </div>
       </div>
       <div class="modal-footer border-top-0 d-flex justify-content-between">

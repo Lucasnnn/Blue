@@ -22,7 +22,6 @@ export class AppService {
   }
 
   atualizar(id: string, dados: Object) {
-    console.log(id, dados);
     return this.http
       .put(`${environment.apiUrl}/atualizarCarro/${id}`, dados)
       .subscribe((res) => {

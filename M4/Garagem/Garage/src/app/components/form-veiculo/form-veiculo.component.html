@@ -1,0 +1,78 @@
+<form
+  [formGroup]="form"
+  class="card p-2 shadow-lg"
+  style="background-color: hsla(0, 0%, 100%, 0.632)"
+>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label fw-bold"
+      >Nome
+    </label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="nome"
+      placeholder="Nome do Veiculo"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label fw-bold"
+      >Tipo
+    </label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="tipo"
+      placeholder="Tipo do Veiculo"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label fw-bold"
+      >Potencia
+    </label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="potencia"
+      placeholder="Potencia do Veiculo"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label fw-bold"
+      >Ano
+    </label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="ano"
+      placeholder="Ano do Veiculo"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label fw-bold"
+      >Link
+    </label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="linkFoto"
+      placeholder="Link da Foto do Veiculo"
+    />
+  </div>
+  <div class="d-flex gap-2 flex-wrap justify-content-around mb-2">
+    <button
+      *ngIf="dadoEdicao"
+      class="btn btn-sm btn-danger"
+      (click)="excluir()"
+      data-bs-dismiss="modal"
+    >
+      Excluir Veiculo
+    </button>
+    <button
+      class="btn btn-sm btn-success"
+      (click)="dadoEdicao ? salvarEdit() : adicionar()"
+      data-bs-dismiss="modal"
+    >
+      Salvar
+    </button>
+  </div>
+</form>

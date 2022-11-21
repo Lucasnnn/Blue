@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AppService } from 'src/app/app.service';
 import { CarrosType } from 'src/app/models/carros.type';
 
@@ -10,40 +10,42 @@ import { CarrosType } from 'src/app/models/carros.type';
 })
 export class ListagemComponent implements OnInit {
   modo: boolean;
-  form: FormGroup;
+  index: number;
   seleciona: CarrosType;
   carros: Array<CarrosType>;
 
-  constructor(private service: AppService, private fb: FormBuilder) {}
+  constructor(private service: AppService, private route: Router) {}
 
   ngOnInit(): void {
     this.service.garagem$.subscribe((res) => {
       this.carros = res;
     });
 
-    this.form = this.fb.group({
-      linkFoto: [],
-      nome: [],
-      tipo: [],
-      ano: [],
-      potencia: [],
-      __v: [],
-      _id: [],
-    });
+    const x = window.localStorage.getItem('taokeyn?');
+    if (!x) {
+      this.route.navigate(['/']);
+    }
   }
 
   selecionado(index: number) {
     this.modo = false;
+    this.index = index;
     this.seleciona = this.carros[index];
   }
 
   editar() {
     this.modo = !this.modo;
-    this.form.setValue(this.seleciona);
   }
 
-  salvarEdit() {
-    this.service.atualizar(this.form.value._id, this.form.value);
-    this.modo = !this.modo;
+  editado(res: CarrosType) {
+    if (typeof res === 'string') {
+      this.carros.map((value: CarrosType, index: number) => {
+        if (value._id === res) {
+          this.carros.splice(index, 1);
+        }
+      });
+    } else {
+      this.carros.splice(this.index, 1, res);
+    }
   }
 }
