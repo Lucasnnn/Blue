@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, first, Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root',
@@ -24,21 +25,41 @@ export class AppService {
   atualizar(id: string, dados: Object) {
     return this.http
       .put(`${environment.apiUrl}/atualizarCarro/${id}`, dados)
-      .subscribe((res) => {
-        if (res) {
-          this.garagem().pipe(first()).subscribe();
+      .subscribe(
+        (res) => {
+          if (res) {
+            this.garagem().pipe(first()).subscribe();
+          }
+        },
+        (err) => {
+          if (err) {
+            Swal.fire({
+              text: `${err.error.message}`,
+              icon: 'error',
+              timer: 2500,
+            });
+          }
         }
-      });
+      );
   }
 
   criar(dados: Object) {
-    return this.http
-      .post(`${environment.apiUrl}/criarCarro`, dados)
-      .subscribe((res) => {
+    return this.http.post(`${environment.apiUrl}/criarCarro`, dados).subscribe(
+      (res) => {
         if (res) {
           this.garagem().pipe(first()).subscribe();
         }
-      });
+      },
+      (err) => {
+        if (err) {
+          Swal.fire({
+            text: `${err.error.message}`,
+            icon: 'error',
+            timer: 2500,
+          });
+        }
+      }
+    );
   }
 
   deletar(id: string) {
