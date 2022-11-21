@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl : 'http://localhost:3000/carros'
+  apiUrl : 'https://garagemlukinha.onrender.com/carros'
 };
 
 /*

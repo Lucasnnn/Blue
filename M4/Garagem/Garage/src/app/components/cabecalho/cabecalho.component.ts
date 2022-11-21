@@ -65,5 +65,6 @@ export class CabecalhoComponent implements OnInit {
 
   adicionar() {
     this.service.criar(this.form.value);
+    this.form.reset();
   }
 }

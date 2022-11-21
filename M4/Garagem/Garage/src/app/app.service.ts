@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { BehaviorSubject, first, Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -27,17 +27,17 @@ export class AppService {
       .put(`${environment.apiUrl}/atualizarCarro/${id}`, dados)
       .subscribe((res) => {
         if (res) {
-          this.garagem();
+          this.garagem().pipe(first()).subscribe();
         }
       });
   }
 
   criar(dados: Object) {
     return this.http
-      .put(`${environment.apiUrl}/criarCarro`, dados)
+      .post(`${environment.apiUrl}/criarCarro`, dados)
       .subscribe((res) => {
         if (res) {
-          this.garagem();
+          this.garagem().pipe(first()).subscribe();
         }
       });
   }
@@ -47,7 +47,7 @@ export class AppService {
       .delete(`${environment.apiUrl}/deletarCarro/${id}`)
       .subscribe((res) => {
         if (res) {
-          this.garagem();
+          this.garagem().pipe(first()).subscribe();
         }
       });
   }
