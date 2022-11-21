@@ -1,1 +1,137 @@
-<p>listagem works!</p>
+<div class="d-flex flex-wrap">
+  <div
+    *ngFor="let dado of carros; let i = index"
+    class="col-sm-12 col-md-6 col-lg-4 h-50 p-3"
+  >
+    <a
+      data-bs-toggle="modal"
+      data-bs-target="#modalEdit"
+      (click)="selecionado(i)"
+    >
+      <app-card
+        linkFoto="{{ dado.linkFoto }}"
+        nome="{{ dado.nome }}"
+        tipo="{{ dado.tipo }}"
+        ano="{{ dado.ano }}"
+        potencia="{{ dado.potencia }}"
+      ></app-card
+    ></a>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="modalEdit"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="modalEdit"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-fullscreen p-4">
+    <div
+      *ngIf="seleciona"
+      class="modal-content rounded"
+      style="
+        background-size: cover;
+        background-position: center;
+        background-image: url({{ seleciona.linkFoto }});
+      "
+    >
+      <div class="modal-header" style="background-color: #00000089">
+        <h1 class="modal-title text-white fs-2" id="modalEdit">
+          {{ seleciona.nome }}
+        </h1>
+        <button
+          type="button"
+          class="btn-close bg-danger"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div *ngIf="modo" class="w-25" style="min-width: 300px">
+          <form
+            [formGroup]="form"
+            class="card p-2 shadow-lg"
+            style="background-color: hsla(0, 0%, 100%, 0.632)"
+          >
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label fw-bold"
+                >Nome
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="nome"
+                placeholder="Nome do Veiculo"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label fw-bold"
+                >Tipo
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="tipo"
+                placeholder="Tipo do Veiculo"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label fw-bold"
+                >Potencia
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="potencia"
+                placeholder="Potencia do Veiculo"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label fw-bold"
+                >Ano
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="ano"
+                placeholder="Ano do Veiculo"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label fw-bold"
+                >Link
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="linkFoto"
+                placeholder="Link da Foto do Veiculo"
+              />
+            </div>
+            <div class="d-flex justify-content-center mb-2">
+              <button class="btn btn-sm btn-success" (click)="salvarEdit()">
+                Salvar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer border-top-0 d-flex justify-content-between">
+        <button type="button" class="btn btn-lg btn-success" (click)="editar()">
+          EDITAR
+        </button>
+        <button
+          type="button"
+          class="btn btn-lg btn-danger"
+          data-bs-dismiss="modal"
+        >
+          FECHAR
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

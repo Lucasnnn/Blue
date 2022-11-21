@@ -5,9 +5,9 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { CarrosType } from 'src/app/models/carros.type';
-import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper';
+import SwiperCore, { Autoplay } from 'swiper';
 
-SwiperCore.use([Pagination, Navigation, Autoplay]);
+SwiperCore.use([Autoplay]);
 
 @Component({
   selector: 'app-loguin',
@@ -77,7 +77,7 @@ export class LoguinComponent implements OnInit {
     },
     loopFillGroupWithBlank: true,
     autoplay: {
-      delay: 2500,
+      delay: 3000,
       disableOnInteraction: false,
     },
     breakpoints: {
